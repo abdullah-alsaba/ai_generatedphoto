@@ -31,6 +31,9 @@ const PhotoDetailsCard = ({ photo }) => {
     await navigator.clipboard.writeText(prompt);
    toast.success("Prompt copied successfully!");
   };
+  const handleDownload = async () => {
+    toast.success("Picture downloaded successfully!");
+  };
 
   return (
     <Card className="border rounded-2xl overflow-hidden">
@@ -128,13 +131,17 @@ const PhotoDetailsCard = ({ photo }) => {
 
           {/* Buttons */}
           <div className="flex gap-4 mt-8">
-            <Button color="primary" className="flex-1">
+            <Button onPress={handleDownload} color="primary" className="flex-1">
               <div className="flex items-center gap-2">
                 <ArrowDownToLine />
                 <span>Download</span>
               </div>
             </Button>
-            <Button variant="bordered" onPress={handleCopy} className="flex-1 border">
+            <Button
+              variant="bordered"
+              onPress={handleCopy}
+              className="flex-1 border"
+            >
               Copy Prompt
             </Button>
           </div>
