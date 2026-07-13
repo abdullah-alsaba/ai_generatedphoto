@@ -17,10 +17,10 @@ const TopPhotos = async () => {
 
     return (
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold mt-6 mb-6">Top Generated Pictures</h1>
-        <div className='grid grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6 '>
+        <h1 className="text-4xl font-bold mt-6 mb-6">Top Generated Photos</h1>
+        <div className="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-6 ">
           {topPhotos.map((topPhoto) => (
-            <TopPhoto topPhoto={topPhoto} key={topPhoto.id}></TopPhoto>
+            <TopPhoto photo={topPhoto} key={topPhoto.id} />
           ))}
         </div>
       </div>

@@ -4,8 +4,9 @@ import React from "react";
 import { HeartFill } from "@gravity-ui/icons";
 import { ArrowDownToLine } from "@gravity-ui/icons";
 
-const PhotoCard = ({ topPhoto }) => {
-  const { imageUrl, title, likes, downloads, category } = topPhoto;
+const PhotoCard = ({ photo }) => {
+  const { imageUrl, title, likes, downloads, category } = photo;
+
   return (
     <Card className="border rounded-xl">
       <div className="relative w-full aspect-square">
@@ -15,8 +16,8 @@ const PhotoCard = ({ topPhoto }) => {
           alt={title}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className=" object-cover rounded-xl"
-              />
-              <Chip className="absolute right-2 top-2">{ category}</Chip>
+        />
+        <Chip className="absolute right-2 top-2">{category}</Chip>
       </div>
 
       <div>
@@ -33,9 +34,12 @@ const PhotoCard = ({ topPhoto }) => {
           <ArrowDownToLine></ArrowDownToLine>
           <p>{downloads}</p>
         </div>
-          </div>
-          
-          <Button variant="outline" className={"w-full"}> View</Button>
+      </div>
+
+      <Button variant="outline" className={"w-full"}>
+        {" "}
+        View
+      </Button>
     </Card>
   );
 };
