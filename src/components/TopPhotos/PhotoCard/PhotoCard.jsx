@@ -3,6 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { HeartFill } from "@gravity-ui/icons";
 import { ArrowDownToLine } from "@gravity-ui/icons";
+import Link from "next/link";
 
 const PhotoCard = ({ photo }) => {
   const { imageUrl, title, likes, downloads, category } = photo;
@@ -36,10 +37,11 @@ const PhotoCard = ({ photo }) => {
         </div>
       </div>
 
-      <Button variant="outline" className={"w-full"}>
-        {" "}
-        View
-      </Button>
+      <Link href={`/all-photos/${photo.id}`}>
+        <Button variant="outline" className={"w-full"}>
+          View
+        </Button>
+      </Link>
     </Card>
   );
 };
