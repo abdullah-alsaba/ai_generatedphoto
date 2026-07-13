@@ -1,5 +1,5 @@
 "use client";
-
+import toast from "react-hot-toast";
 import React from "react";
 import Image from "next/image";
 import { Card, Chip, Button } from "@heroui/react";
@@ -29,7 +29,7 @@ const PhotoDetailsCard = ({ photo }) => {
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(prompt);
-    alert("Prompt copied!");
+   toast.success("Prompt copied successfully!");
   };
 
   return (
@@ -81,12 +81,11 @@ const PhotoDetailsCard = ({ photo }) => {
 
             <div className="flex flex-wrap gap-2">
               {tags.map((tag) => (
-                <Chip
-                  key={tag}
-                  variant="flat"
-                  startContent={<Hashtag width={14} />}
-                >
-                  {tag}
+                <Chip key={tag}>
+                  <div className="flex items-center gap-1">
+                    <Hashtag width={14} />
+                    <span>{tag}</span>
+                  </div>
                 </Chip>
               ))}
             </div>
@@ -129,20 +128,13 @@ const PhotoDetailsCard = ({ photo }) => {
 
           {/* Buttons */}
           <div className="flex gap-4 mt-8">
-            <Button
-              color="primary"
-              startContent={<ArrowDownToLine />}
-              className="flex-1"
-            >
-              Download
+            <Button color="primary" className="flex-1">
+              <div className="flex items-center gap-2">
+                <ArrowDownToLine />
+                <span>Download</span>
+              </div>
             </Button>
-
-            <Button
-              variant="bordered"
-              
-              onPress={handleCopy}
-              className="flex-1"
-            >
+            <Button variant="bordered" onPress={handleCopy} className="flex-1 border">
               Copy Prompt
             </Button>
           </div>
