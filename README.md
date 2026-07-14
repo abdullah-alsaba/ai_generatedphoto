@@ -1,36 +1,231 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🎨 PixGen – AI Image Generation Gallery
 
-## Getting Started
+PixGen is a modern AI-powered image gallery built with **Next.js** where users can explore AI-generated artwork, view detailed prompts, and manage their personal profiles through secure authentication. The application provides a clean, responsive interface with protected routes and Google Sign-In support.
 
-First, run the development server:
+---
+
+## 🌐 Live Demo
+
+🔗 **Live Site:** https://ai-generatedphoto.vercel.app
+
+---
+
+## 📌 Project Purpose
+
+PixGen was built to provide a beautiful and interactive platform for showcasing AI-generated images. Users can browse different AI artworks, view detailed information about each image, authenticate securely, and manage their profiles.
+
+---
+
+## ✨ Features
+
+- 🔐 Secure authentication with Better Auth
+- 🚀 Google Sign-In authentication
+- 👤 User profile page
+- ✏️ Update profile (Name & Profile Image)
+- 🖼️ AI image gallery with modern card layout
+- 📄 Detailed image information page
+- 🔒 Protected routes for Profile & Photo Details
+- 🏷️ Category-based image filtering
+- ❤️ Display likes and downloads
+- 📱 Fully responsive design (Mobile, Tablet & Desktop)
+- ⚡ Built with Next.js App Router
+- 🎨 Modern AI-inspired UI
+
+---
+
+## 📸 Pages
+
+### 🏠 Home
+
+- Hero Banner
+- Featured AI Images
+- Responsive Layout
+
+### 🖼️ All Photos
+
+- View all AI-generated images
+- Filter images by category
+- Responsive grid layout
+
+### 📄 Photo Details (Protected)
+
+- Large image preview
+- Prompt
+- AI Model
+- Resolution
+- Category
+- Tags
+- Likes & Downloads
+
+### 🔑 Authentication
+
+- Sign Up
+- Sign In
+- Google Login
+
+### 👤 Profile (Protected)
+
+- User Name
+- Email
+- Profile Image
+- Update Profile
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- Next.js 16
+- React
+- Tailwind CSS
+- HeroUI
+- React Icons
+- Gravity UI Icons
+
+### Backend
+
+- Better Auth
+- MongoDB Atlas
+
+### Deployment
+
+- Vercel
+
+---
+
+## 📦 NPM Packages Used
+
+### Core
+
+- next
+- react
+- react-dom
+
+### UI
+
+- tailwindcss
+- @heroui/react
+- react-icons
+- @gravity-ui/icons
+
+### Authentication
+
+- better-auth
+
+### Database
+
+- mongodb
+
+### Notifications
+
+- sonner
+
+---
+
+## 📂 Project Structure
+
+```
+app/
+│
+├── (auth)/
+│   ├── signin
+│   └── signup
+│
+├── all-photos
+├── photos/[id]
+├── profile
+│
+components/
+data/
+lib/
+public/
+```
+
+---
+
+## 🚀 Getting Started
+
+Clone the repository
+
+```bash
+git clone https://github.com/abdullah-alsaba/ai_generatedphoto.git
+```
+
+Go to the project directory
+
+```bash
+cd pixgen
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Create your environment variables
+
+```bash
+.env.local
+```
+
+Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open your browser
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📱 Responsive Design
 
-To learn more about Next.js, take a look at the following resources:
+The application is fully optimized for:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- 📱 Mobile
+- 💻 Laptop
+- 🖥️ Desktop
+- 📟 Tablet
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🔒 Protected Routes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The following routes require authentication:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `/profile`
+- `/photos/[id]`
+
+Unauthenticated users are redirected to the Sign In page.
+
+---
+
+## 🎯 Future Improvements
+
+- ❤️ Favorite Images
+- 💬 Comments
+- 🌙 Dark / Light Theme
+- 🔎 Search Functionality
+- 📤 Download Images
+- 📊 User Dashboard
+- 🤖 AI Image Generation API Integration
+
+---
+
+## 👨‍💻 Author
+
+**Abdullah Al Saba**
+
+GitHub: https://github.com/abdullah-alsaba
+
+---
+
+## 📄 License
+
+This project is developed for learning purposes and academic submission.
