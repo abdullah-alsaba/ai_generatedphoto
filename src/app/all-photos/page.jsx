@@ -1,12 +1,10 @@
 import AllPictures from '@/components/AllPictures/AllPictures';
 import React from 'react';
 
-const AllPhotsPage = async () => {
+const AllPhotsPage = async ({searchParams}) => {
  
 
-    return (
-     <AllPictures></AllPictures>
-    );
+    return <AllPictures searchParams={searchParams}></AllPictures>;
 };
 
 export default AllPhotsPage;
