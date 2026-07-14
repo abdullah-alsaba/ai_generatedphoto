@@ -1,5 +1,6 @@
 "use client";
 
+import { UpdateUserInfo } from "@/components/UpdateUserInfo/UpdateUserInfo";
 import { authClient } from "@/lib/auth-client";
 
 import {
@@ -7,7 +8,7 @@ import {
   Envelope,
   CircleCheckFill,
   Calendar,
-  Pencil,
+ 
 } from "@gravity-ui/icons";
 import { Avatar, Button, Card, CardBody, Chip } from "@heroui/react";
 
@@ -60,9 +61,8 @@ const ProfilePage = () => {
               </div>
             </div>
 
-            <Button color="primary" variant="flat" startContent={<Pencil />}>
-              Edit Profile
-            </Button>
+            
+                      <UpdateUserInfo></UpdateUserInfo>
           </div>
 
           <div className="h-px bg-default-200 w-full" />
