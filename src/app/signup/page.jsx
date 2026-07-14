@@ -1,4 +1,5 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import {
   Button,
@@ -13,7 +14,21 @@ import {
 
 export default function SignUpPage() {
   const onSubmit = async (e) => {
-    e.preventDefault();
+      e.preventDefault();
+      
+         const formData = new FormData(e.target);
+      const userData = Object.fromEntries(formData.entries());
+      
+     
+      const { data, error } = await authClient.signUp.email({
+        name: userData.name,
+        email: userData.email,
+        password: userData.password,
+        image: userData.image,
+        callbackURL: "/signin",
+      });
+      console.log({data, error})
+      
   };
 
   return (
