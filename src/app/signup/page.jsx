@@ -1,6 +1,6 @@
 "use client";
 import { authClient } from "@/lib/auth-client";
-import { Check } from "@gravity-ui/icons";
+import { Check, Eye, EyeSlash } from "@gravity-ui/icons";
 import {
   Button,
   Card,
@@ -10,10 +10,14 @@ import {
   Input,
   Label,
   TextField,
+  InputGroup,
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
 
+
+
 export default function SignUpPage() {
+  const [isVisible, setIsVisible] = useState(false);
 
 const router =useRouter()
 
