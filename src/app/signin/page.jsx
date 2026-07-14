@@ -17,10 +17,22 @@ import { Eye, EyeSlash } from "@gravity-ui/icons";
 
 import React, { useState } from "react";
 import toast from "react-hot-toast";
+import { GrGoogle } from "react-icons/gr";
 
 export default function SignInPage() {
   const [isVisible, setIsVisible] = useState(false);
+    
 
+    const handleGoogleLogIn = async () => {
+        await authClient
+            .signIn.social({
+                provider: "google",
+                
+            
+                callbackURL: "/",
+            });
+         toast.success("Successfully logged in");
+  }
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -88,14 +100,25 @@ export default function SignInPage() {
         </TextField>
 
         <div className="flex gap-2">
-          <Button type="submit">
+          <Button type="Sign In">
             <Check />
-            Submit
+            Sign In
           </Button>
           <Button type="reset" variant="secondary">
             Reset
           </Button>
         </div>
+
+        <p className="font-medium text-center">Or</p>
+
+        <Button onClick={()=>handleGoogleLogIn()}
+          type="button"
+          variant="bordered"
+          className="w-full h-12  border bg-linear-to-r from-violet-600 via-purple-600 to-blue-600 text-white font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"  
+        >
+          <GrGoogle className="text-lg" />
+          Sign in with Google
+        </Button>
       </Form>
     </Card>
   );

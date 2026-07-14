@@ -117,7 +117,7 @@ const router =useRouter()
         <div className="flex gap-2">
           <Button type="submit">
             <Check />
-            Submit
+            Sign Up
           </Button>
           <Button type="reset" variant="secondary">
             Reset
