@@ -63,7 +63,7 @@ export default function SignInPage() {
           <FieldError />
         </TextField>
 
-        <TextField isRequired name="password">
+        <TextField placeholder="Password" isRequired name="password">
           <Label>Password</Label>
 
           <InputGroup className="w-full">
