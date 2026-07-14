@@ -36,7 +36,7 @@ const PhotoDetailsCard = ({ photo }) => {
   };
 
   return (
-    <Card className="border rounded-2xl overflow-hidden">
+    <Card className="border rounded-2xl overflow-hidden mt-6">
       <div className="grid lg:grid-cols-2 gap-8 p-6">
         {/* Left Side Image */}
         <div className="relative w-full aspect-square rounded-xl overflow-hidden">
