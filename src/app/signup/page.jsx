@@ -14,6 +14,7 @@ import {
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 
 
@@ -38,9 +39,19 @@ const router =useRouter()
         image: userData.image,
         callbackURL: "/signin",
       });
-    if (!error) {
-            router.push("/signin");
-          }
+   if (!error) {
+     toast.success(
+       "Account created successfully. Redirecting to the sign in page...",
+     );
+
+     setTimeout(() => {
+       router.push("/signin");
+     }, 2000);
+   } else {
+     toast.error(
+       "Unable to create your account. Please check your information and try again.",
+     );
+   }
 
       
   };
@@ -79,29 +90,29 @@ const router =useRouter()
           <FieldError />
         </TextField>
 
-       <TextField isRequired name="password">
-                 <Label>Password</Label>
-       
-                 <InputGroup className="w-full">
-                   <InputGroup.Input
-                     name="password"
-                     type={isVisible ? "text" : "password"}
-                   />
-       
-                   <InputGroup.Suffix>
-                     <Button
-                       isIconOnly
-                       variant="light"
-                       size="sm"
-                       onPress={() => setIsVisible(!isVisible)}
-                     >
-                       {isVisible ? <Eye /> : <EyeSlash />}
-                     </Button>
-                   </InputGroup.Suffix>
-                 </InputGroup>
-       
-                 <FieldError />
-               </TextField>
+        <TextField placeholder="Password" isRequired name="password">
+          <Label>Password</Label>
+
+          <InputGroup className="w-full">
+            <InputGroup.Input
+              name="password"
+              type={isVisible ? "text" : "password"}
+            />
+
+            <InputGroup.Suffix>
+              <Button
+                isIconOnly
+                variant="light"
+                size="sm"
+                onPress={() => setIsVisible(!isVisible)}
+              >
+                {isVisible ? <Eye /> : <EyeSlash />}
+              </Button>
+            </InputGroup.Suffix>
+          </InputGroup>
+
+          <FieldError />
+        </TextField>
 
         <div className="flex gap-2">
           <Button type="submit">

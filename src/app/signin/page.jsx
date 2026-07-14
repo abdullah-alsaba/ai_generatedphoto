@@ -16,6 +16,7 @@ import {
 import { Eye, EyeSlash } from "@gravity-ui/icons";
 
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function SignInPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -32,7 +33,12 @@ export default function SignInPage() {
 
       callbackURL: "/",
     });
-    console.log({ data, error });
+  if (error) {
+    toast.error(error.message || "Login failed");
+    return;
+  }
+
+  toast.success("Successfully logged in");
   };
 
   return (
